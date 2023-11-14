@@ -86,7 +86,7 @@ namespace Конвертер_чисел_в_текст.Middleware
                     if (elv2 == null) { num2 %= 10; numSubResult2 = (ten2 == null ? "" : ten2 + " ") + (num2 == 0 ? "" : Numbers[num2 - 1]); }
                     else numSubResult2 = elv2;
 
-                    if (ten2 == null)
+                    if (ten2 == null && elv2 == null)
                         {
                             num2 %= 10;
                             if (hnd1 == null)
@@ -113,7 +113,7 @@ namespace Конвертер_чисел_в_текст.Middleware
                                     if (num1 == 10)
                                         await context.Response.WriteAsync("Your number is: " + Numbers[num2 - 1] + " thousand " + hnd1 + "ten");
                                     else
-                                        await context.Response.WriteAsync("Your number is: " + Numbers[num2 - 1] + " thousand " + hnd1 + " " + Numbers[num1 - 1]);
+                                        await context.Response.WriteAsync("Your number is: " + Numbers[num2 - 1] + " thousand " + hnd1 + " " + (num1 == 0 ? "" : Numbers[num1 - 1]));
                                 }
                                 else
                                 {
@@ -132,7 +132,7 @@ namespace Конвертер_чисел_в_текст.Middleware
                                     if (num1 == 10)
                                         await context.Response.WriteAsync("Your number is: " + numSubResult2 + " thousand " + " " + "ten");
                                     else
-                                        await context.Response.WriteAsync("Your number is: " + numSubResult2 + " thousand " + Numbers[num1 - 1]);
+                                        await context.Response.WriteAsync("Your number is: " + numSubResult2 + " thousand " + (num1 == 0 ? "" : Numbers[num1 - 1]));
                                 }
                                 else
                                     //num1 %= 10;
@@ -146,7 +146,7 @@ namespace Конвертер_чисел_в_текст.Middleware
                                     if (num1 == 10)
                                         await context.Response.WriteAsync("Your number is: " + numSubResult2 + " thousand " + hnd1 + " " + "ten");
                                     else
-                                        await context.Response.WriteAsync("Your number is: " + numSubResult2 + " thousand " + hnd1 + " " + Numbers[num1 - 1]);
+                                        await context.Response.WriteAsync("Your number is: " + numSubResult2 + " thousand " + hnd1 + " " + (num1 == 0 ? "" : Numbers[num1 - 1]));
                                 }
                                 else
                                 {

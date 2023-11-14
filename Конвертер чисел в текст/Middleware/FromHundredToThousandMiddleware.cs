@@ -50,23 +50,16 @@ namespace Конвертер_чисел_в_текст.Middleware
                     int num2 = Convert.ToInt32(context.Session.GetString("num2"));
 
                     if (num1 < 100 && num2 < 100) { await _next.Invoke(context); }
-                    else if (num1 >0 && num1 < 100 && num2 == 100)
-                    {
-                        context.Session.SetString("num2hnd", "one hundred");
-                        context.Session.SetString("num2", num2.ToString());
-
-                        await _next.Invoke(context);
-                    }
-                    else if (num1 ==0 && num2 == 100)
+                    else if (num1 == 0 && num2 == 100)
                         await context.Response.WriteAsync("Your number is: one hundred thousand");
-                    else
+                    else if (num2 != 100)
                     {
                         context.Session.SetString("num1", num1.ToString());
                         num1 = (num1 - num1 % 100) / 100;
                         context.Session.SetString("num1hnd", Numbers[num1 - 1] + " hundred");
                         await _next.Invoke(context);
                     }
-
+                    else await context.Response.WriteAsync("Number is above 100000");
 
                 }
             }
