@@ -1,6 +1,6 @@
-﻿using Конвертер_чисел_в_текст.Middleware;
+﻿using ConvertNumToString.Middleware;
 
-namespace Конвертер_чисел_в_текст.Extensions
+namespace ConvertNumToString.Extensions
 {
     public static class FromTwentyToHundredExtensions
     {

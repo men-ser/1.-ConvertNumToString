@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace Конвертер_чисел_в_текст.Middleware
+namespace ConvertNumToString.Middleware
 {
     public class FromOneToTenMiddleware
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System.Diagnostics.Eventing.Reader;
 
-namespace Конвертер_чисел_в_текст.Middleware
+namespace ConvertNumToString.Middleware
 {
     public class FromHundredToThousandMiddleware
     {

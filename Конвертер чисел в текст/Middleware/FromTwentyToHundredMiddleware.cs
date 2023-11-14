@@ -1,4 +1,4 @@
-﻿namespace Конвертер_чисел_в_текст.Middleware
+﻿namespace ConvertNumToString.Middleware
 {
     public class FromTwentyToHundredMiddleware
     {

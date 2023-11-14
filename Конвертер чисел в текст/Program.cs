@@ -1,4 +1,4 @@
-using Конвертер_чисел_в_текст.Extensions;
+using ConvertNumToString.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDistributedMemoryCache();
